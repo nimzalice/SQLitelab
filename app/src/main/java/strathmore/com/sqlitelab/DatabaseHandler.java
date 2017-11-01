@@ -179,8 +179,8 @@ public class DatabaseHandler extends SQLiteOpenHelper{
     }
 
     //getting all students
-    public List<String> getAllStudents(){
-        List<String >studentsList= new ArrayList<>();
+    public List<Students> getAllStudents(){
+        List<Students>studentsList= new ArrayList<Students>();
 
         //select all query
         String selectQuery="SELECT * FROM "+TABLE_STUDENTS;
@@ -198,7 +198,7 @@ public class DatabaseHandler extends SQLiteOpenHelper{
                 students.setStudent_faculty(cursor.getString(3));
 
                 //adding contact to list
-                studentsList.add(String.valueOf(students));
+                studentsList.add(students);
             }while (cursor.moveToNext());
         }
         return studentsList;

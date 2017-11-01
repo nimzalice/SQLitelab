@@ -75,29 +75,8 @@ public class Contact extends AppCompatActivity {
 
 
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_contact);
 
-        DatabaseHandler db = new DatabaseHandler(this);
 
-        //inserting contacts
-        Log.d("Insert:", "Inserting....");
-        db.addContact(new Contact("Ravi", "9100000000"));
-        db.addContact(new Contact("Srinivas", "9199999999"));
-        db.addContact(new Contact("Tommy", "9522222222"));
-        db.addContact(new Contact("Karthik", "9133333333"));
-
-        //reading all contacts
-        Log.d("Reading:", "Reading all contacts...");
-        List<Contact> contacts = db.getAllContacts();
-
-        for (Contact cn : contacts) {
-            String log = "Id:" + cn.getID() + ", Name:" + cn.getName() + ",Phone:"+cn.getPhoneNumber();
-            //writing contacts to log
-            Log.d("Name:", log);
-        }
     }
-}
+
 
